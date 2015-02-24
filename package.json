@@ -1,0 +1,26 @@
+{
+  "name": "skiano.block-ascii",
+  "version": "1.0.1",
+  "description": "Ascii decorator for skiano.block",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "skiano.block": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skiano/block-ascii.git"
+  },
+  "author": "Greg Skiano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skiano/block-ascii/issues"
+  },
+  "homepage": "https://github.com/skiano/block-ascii"
+}
