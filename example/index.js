@@ -1,23 +1,23 @@
-// TESTING
 
-function addPoints (A, B) {
-  return [A[0] + B[0], A[1] + B[1]];
-}
+var asciiBlock = require('../index'),
+  rand = require('random-seed').create();
 
-var rand = require('random-seed').create();
+var block = asciiBlock([
+    rand.intBetween(15,51),
+    rand.intBetween(15,51)
+  ], {
+    rotate: 180,
+    step: rand.intBetween(2,25),
+    direction: ['x','y'][rand.intBetween(0,1)]
+});
 
-// var a = new AsciiBlock([
-//     rand.intBetween(15,51),
-//     rand.intBetween(15,51)
-//   ], {
-//     rotate: 180,
-//     step: rand.intBetween(2,25),
-//     direction: ['x','y'][rand.intBetween(0,1)]
-// });
-
-var a = new AsciiBlock([3,3], {
+var block = asciiBlock([3,3], {
   rotate: 180
 });
+
+function addPoints (a, b) {
+  return [a[0] + b[0], a[1] + b[1]];
+}
 
 // var randMark = (function () {
 //   var marks = '..*'.split('');
@@ -32,9 +32,9 @@ var a = new AsciiBlock([3,3], {
 //   a.mark(p, randMark());
 // }
 
-a.mark([0,0], '#');
-a.mark([1,1], '$');
-a.mark([2,2], ')');
+block.mark([0,0], '#');
+block.mark([1,1], '$');
+block.mark([2,2], ')');
 
 // function line (block) {
 //   var x = rand.intBetween(0, block.width);
@@ -105,5 +105,5 @@ a.mark([2,2], ')');
 //   box(p, a, w, h);
 // }
 
-var str = a.render(12,6, 0, 0);
+var str = block.render(12,6, 0, 0);
 console.log('\n' + str + '\n');

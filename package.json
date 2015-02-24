@@ -7,6 +7,7 @@
     "test": "test"
   },
   "dependencies": {
+    "random-seed": "^0.2.0",
     "skiano.block": "^1.0.0"
   },
   "devDependencies": {},
